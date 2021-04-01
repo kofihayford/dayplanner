@@ -42,10 +42,21 @@ $(document).ready(function () {
         localStorage.setItem(`#${id}`, JSON.stringify(entries))
     }
 
+    // localStorage.getItem(`#${id}`) 
 
+    //Use this to make sure I'm grabbing the appropraiate item
+    console.log(localStorage.getItem('#9'))
 
+    //Grab the children elements of the main container div in the HTML
+    $(".container").children.each
 
 })
+
+
+// while ( ) {
+//     n++;
+//     x += n;
+//    }
 
     // Call the functions you created
 
