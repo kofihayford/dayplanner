@@ -4,6 +4,7 @@ $(document).ready(function () {
     const currentDayEl = $("#currentDay")
     let currentDate = moment().format('dddd MMMM Do YYYY, h:mm a');
 
+
     // Display the current time using Moment 
     currentDayEl.text(currentDate);
 
@@ -21,15 +22,24 @@ $(document).ready(function () {
         }
     })
 
+    // console.log(val, "this is our value")
     // Create functions that update the appropriate elements of the DOM with the user's inputs. Check the listener and activating functions with console logs to begin with. Create event listener so that it captures the click when the save button is pressed by the user. Activate Local Storage 
-    $(".saveBtn").on("click", function () {
+    $(".saveBtn").on("click", function (event) {
         // alert("I've been clicked!");
-
+        console.log(event, "this is our event")
+        let val = $(`${id} > textarea`).val()
+        saveLocal(val)
+        console.log(val)
     });
 
-    //Load the etnries from local storage and save them to the text areas 
+    function saveLocal(text) {
+        localStorage.setItem('test', text)
+    }
+
+
+    //Load the entries from local storage and save them to the text areas 
+
+})
 
     // Call the functions you created
 
-
-})
